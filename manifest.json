@@ -1,0 +1,19 @@
+{
+  "name": "Focus-Meds",
+  "short_name": "FocusMeds",
+  "description": "Sistema de soporte a la adherencia farmacológica y seguridad ocupacional.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#1a73e8",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon-72x72.png",   "sizes": "72x72",   "type": "image/png" },
+    { "src": "icons/icon-96x96.png",   "sizes": "96x96",   "type": "image/png" },
+    { "src": "icons/icon-128x128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "icons/icon-144x144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
