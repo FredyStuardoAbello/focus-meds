@@ -349,3 +349,154 @@ input.input-error { border-color: var(--red-400) !important; background: var(--r
 }
 .ob-btn--ghost:hover { background: var(--gray-150); color: var(--gray-600); }
 .ob-hidden { display: none !important; }
+
+/* =============================================
+   FOCUS-MEDS — Dark Mode
+   Clase .dark en <html> (toggle manual)
+   + prefers-color-scheme automático
+   ============================================= */
+
+/* ── Variables oscuras ── */
+html.dark,
+html.dark *,
+@media (prefers-color-scheme: dark) {
+  --dummy: 0; /* fuerza bloque */
+}
+
+html.dark {
+  --bg:       #0f172a;
+  --white:    #1e2535;
+  --gray-50:  #252d3d;
+  --gray-100: #2a3347;
+  --gray-150: #303b52;
+  --gray-200: #374357;
+  --gray-300: #475569;
+  --gray-400: #64748b;
+  --gray-500: #94a3b8;
+  --gray-600: #b0bec5;
+  --gray-700: #cfd8dc;
+  --gray-800: #e0e7ef;
+  --gray-900: #f1f5f9;
+  --blue-50:  #1e2d4a;
+  --blue-100: #1e3a5f;
+  --red-50:   #2d1515;
+  --amber-100:#2d2000;
+  --green-50: #0d2318;
+  --green-100:#0f2d1e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg:       #0f172a;
+    --white:    #1e2535;
+    --gray-50:  #252d3d;
+    --gray-100: #2a3347;
+    --gray-150: #303b52;
+    --gray-200: #374357;
+    --gray-300: #475569;
+    --gray-400: #64748b;
+    --gray-500: #94a3b8;
+    --gray-600: #b0bec5;
+    --gray-700: #cfd8dc;
+    --gray-800: #e0e7ef;
+    --gray-900: #f1f5f9;
+    --blue-50:  #1e2d4a;
+    --blue-100: #1e3a5f;
+    --red-50:   #2d1515;
+    --amber-100:#2d2000;
+    --green-50: #0d2318;
+    --green-100:#0f2d1e;
+  }
+}
+
+/* ── Header oscuro ── */
+html.dark .app-header {
+  background: linear-gradient(135deg, #060d1f 0%, #0a1628 60%, #0f1e3d 100%);
+  box-shadow: 0 2px 14px rgba(0,0,0,.6);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .app-header {
+    background: linear-gradient(135deg, #060d1f 0%, #0a1628 60%, #0f1e3d 100%);
+    box-shadow: 0 2px 14px rgba(0,0,0,.6);
+  }
+}
+
+/* ── Card próxima toma oscura ── */
+html.dark .card--next {
+  background: linear-gradient(135deg, #060d1f 0%, #0a1628 55%, #0f1e3d 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .card--next {
+    background: linear-gradient(135deg, #060d1f 0%, #0a1628 55%, #0f1e3d 100%);
+  }
+}
+
+/* ── Inputs oscuros ── */
+html.dark input[type="text"],
+html.dark input[type="time"] {
+  color: var(--gray-900);
+  border-color: var(--gray-200);
+  background: var(--gray-50);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) input[type="text"],
+  :root:not(.light) input[type="time"] {
+    color: var(--gray-900);
+    border-color: var(--gray-200);
+    background: var(--gray-50);
+  }
+}
+
+/* ── Drawer oscuro ── */
+html.dark .drawer         { background: #1e2535; }
+html.dark .drawer-handle  { background: #374357; }
+html.dark .drawer-close   { background: #2a3347; color: #94a3b8; }
+html.dark .drawer-title   { color: #f1f5f9; }
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .drawer        { background: #1e2535; }
+  :root:not(.light) .drawer-handle { background: #374357; }
+  :root:not(.light) .drawer-close  { background: #2a3347; color: #94a3b8; }
+  :root:not(.light) .drawer-title  { color: #f1f5f9; }
+}
+
+/* ── Onboarding oscuro ── */
+html.dark .ob-card    { background: #1e2535; }
+html.dark .ob-title   { color: #f1f5f9; }
+html.dark .ob-desc    { color: #94a3b8; }
+html.dark .ob-desc strong { color: #e0e7ef; }
+html.dark .ob-btn--ghost  { background: #2a3347; color: #64748b; }
+html.dark .ob-dot         { background: #374357; }
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .ob-card   { background: #1e2535; }
+  :root:not(.light) .ob-title  { color: #f1f5f9; }
+  :root:not(.light) .ob-desc   { color: #94a3b8; }
+  :root:not(.light) .ob-desc strong { color: #e0e7ef; }
+  :root:not(.light) .ob-btn--ghost  { background: #2a3347; color: #64748b; }
+  :root:not(.light) .ob-dot    { background: #374357; }
+}
+
+/* ── Footer oscuro ── */
+html.dark .app-footer {
+  background: #1e2535;
+  border-color: #374357;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .app-footer {
+    background: #1e2535;
+    border-color: #374357;
+  }
+}
+
+/* ── Header actions + botón toggle ── */
+.header-actions { display: flex; align-items: center; gap: .5rem; }
+.header-theme-btn {
+  font-size: 1.1rem; line-height: 1;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: .42rem .48rem; border-radius: 50%;
+  cursor: pointer; color: inherit;
+  transition: background var(--t), transform var(--t);
+  -webkit-tap-highlight-color: transparent;
+}
+.header-theme-btn:hover  { background: rgba(255,255,255,.25); }
+.header-theme-btn:active { transform: scale(.9); }
