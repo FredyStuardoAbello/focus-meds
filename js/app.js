@@ -29,7 +29,7 @@ const drawerTitleText = document.getElementById('drawer-title-text');
 
 document.addEventListener('DOMContentLoaded', () => {
   registerServiceWorker();
-  Notifications.updateStatusUI();
+  Notifications.init();
   clearOldHistory();
   renderList();
   renderHistory();
@@ -211,7 +211,7 @@ function updateNextTake() {
 function startCountdown() { updateNextTake(); countdownInt = setInterval(updateNextTake, 60000); }
 
 // ── NOTIFICACIONES ──
-async function handleEnableNotif() { const r = await Notifications.requestPermission(); Notifications.updateStatusUI(); if(r==='granted') Notifications.send('Focus-Meds activo ✅',{body:'Recibirás recordatorios configurados.'}); }
+async function handleEnableNotif() { const r = await Notifications.requestPermission(); Notifications.init(); if(r==='granted') Notifications.send('Focus-Meds activo ✅',{body:'Recibirás recordatorios configurados.'}); }
 function startChecker() { checkMeds(); checkInterval = setInterval(checkMeds, 60000); }
 function checkMeds() {
   if (Notifications.permission !== 'granted') return;
