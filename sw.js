@@ -1,21 +1,20 @@
 // =============================================
 // FOCUS-MEDS — sw.js  (v3)
 // =============================================
-const CACHE_NAME   = 'focusmeds-v4';
-const BASE         = '/focus-meds';
+const CACHE_NAME   = 'focusmeds-v3';
 const CACHE_ASSETS = [
-  BASE + '/',
-  BASE + '/index.html',
-  BASE + '/css/style.css',
-  BASE + '/js/theme.js',
-  BASE + '/js/onboarding.js',
-  BASE + '/js/storage.js',
-  BASE + '/js/notifications.js',
-  BASE + '/js/app.js',
-  BASE + '/manifest.json',
-  BASE + '/icons/icon-72x72.png',
-  BASE + '/icons/icon-192x192.png',
-  BASE + '/icons/icon-512x512.png'
+  './',
+  './index.html',
+  './css/style.css',
+  './js/theme.js',
+  './js/onboarding.js',
+  './js/storage.js',
+  './js/notifications.js',
+  './js/app.js',
+  './manifest.json',
+  './icons/icon-72x72.png',
+  './icons/icon-192x192.png',
+  './icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', e => {
@@ -40,7 +39,7 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request)
       .then(cached => cached || fetch(e.request))
-      .catch(() => caches.match(BASE + '/index.html'))
+      .catch(() => caches.match('./index.html'))
   );
 });
 
@@ -51,7 +50,7 @@ self.addEventListener('notificationclick', e => {
       for (const c of list) {
         if (c.url.includes('index.html') && 'focus' in c) return c.focus();
       }
-      return clients.openWindow(BASE + '/index.html');
+      return clients.openWindow('./index.html');
     })
   );
 });
