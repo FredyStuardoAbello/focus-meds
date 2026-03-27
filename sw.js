@@ -1,5 +1,5 @@
 // =============================================
-// FOCUS-MEDS — sw.js  (v3)
+// FOCUS-MEDS — sw.js  (v1)
 // =============================================
 const CACHE_NAME   = 'focusmeds-v1';
 const CACHE_ASSETS = [
